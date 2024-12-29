@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: finance-tracker
+server:
+  port: 8080
+  servlet:
+    context-path: /finance-tracker
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+      base-path: /actuator
+  metrics:
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]": true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
