@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    vault:
+      token: root-token
+      scheme: http
+      kv:
+        enabled: true
